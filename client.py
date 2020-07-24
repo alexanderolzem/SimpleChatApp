@@ -1,5 +1,4 @@
 import socket
-# import select
 import errno
 import sys
 from tkinter import *
@@ -7,7 +6,6 @@ import tkinter.scrolledtext as tkscroll
 
 HEADER_LENGTH = 10
 
-# Server
 PORT = 9090
 s = None
 
@@ -41,6 +39,7 @@ def btn_connect_click():
 
         btn_send['state'] = 'normal'
         txt_message['state'] = 'normal'
+        root.title(f"Simple Chat App - {my_username} on {IP}")
     else:
         s = None
 
@@ -73,11 +72,9 @@ out_chat = tkscroll.ScrolledText(root)
 
 lbl_ip.grid(row=0, column=0)
 txt_ip.grid(row=0, column=1)
-txt_ip.insert(0, "192.168.178.28")
 
 lbl_user.grid(row=0, column=2)
 txt_user.grid(row=0, column=3)
-txt_user.insert(0, "alex")
 
 btn_connect.grid(row=0, column=5)
 
